@@ -25,6 +25,14 @@ describe('GET /signup', () => {
   });
 });
 
+describe('GET /rolesignup', () => {
+  it('should return 200 OK', (done) => {
+    request(app)
+      .get('/rolesignup')
+      .expect(200, done());
+  });
+});
+
 describe('GET /api', () => {
   it('should return 200 OK', (done) => {
     request(app)

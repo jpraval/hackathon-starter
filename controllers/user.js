@@ -120,9 +120,26 @@ exports.postSignup = (req, res, next) => {
  * Profile page.
  */
 exports.getAccount = (req, res) => {
-  res.render('account/profile', {
-    title: 'Account Management'
+  if(req.user.role == 'provider'){
+    res.render('account/provider/profile', {
+    title: 'Provider - Account Management'
   });
+  }
+  if(req.user.role == 'familyaccount'){
+    res.render('account/family/profile', {
+    title: 'Family - Account Management'
+  });
+  }
+  if(req.user.role == 'carer'){
+    res.render('account/carer/profile', {
+    title: 'Carer - Account Management'
+  });
+  }
+  if(req.user.role == 'govt'){
+    res.render('account/govt/profile', {
+    title: 'govt - Account Management'
+  });
+  }
 };
 
 /**
@@ -147,6 +164,9 @@ exports.postUpdateProfile = (req, res, next) => {
     user.profile.gender = req.body.gender || '';
     user.profile.location = req.body.location || '';
     user.profile.website = req.body.website || '';
+    /**
+    check role here and then take up fields to populate profile
+    **/
     user.save((err) => {
       if (err) {
         if (err.code === 11000) {

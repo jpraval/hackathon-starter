@@ -7,6 +7,17 @@ const userSchema = new mongoose.Schema({
   password: String,
   passwordResetToken: String,
   passwordResetExpires: Date,
+  role:{type: String},
+
+  numhoursavailable: {type: Number},
+  numhoursrequired: {type: Number},
+  careagesavailablefor: {type: String},
+  careagesrequired: {type: String},
+  contactname: {type: String},
+  mobile: {type: String},
+  address: {type: String},
+  pincode: {type: String},
+  typeofprovider: {type: String},
 
   facebook: String,
   twitter: String,
@@ -19,10 +30,66 @@ const userSchema = new mongoose.Schema({
 
   profile: {
     name: String,
+    familyRole1:String,
+    familyRole2:String,
+    parent1:String,
+    parent2:String,
+    childAge:String,
+    numChild:Number,
     gender: String,
-    location: String,
+    dateOfBirth: Date, 
+    location: {
+      coordinates:{
+        longitude:Number,
+        latitude:Number
+      },
+      precision:Number,
+      textLocation:String
+    },
     website: String,
-    picture: String
+    picture: String,
+    yourstory: String, 
+    idealcarer:String,
+    membership:{
+      plan:String,
+      lastPaymentOn:Date,
+      paymentDue:Date,
+      pricing:Number,
+      discount:Number
+    },
+    availaibilty:{
+      dayOfWeek:String,
+      beforeSchool:Boolean,
+      day:Boolean,
+      afterSchool:Boolean,
+      evening:Boolean
+    },
+    description:String,
+    responsibilities:String,
+    idealjob:String,
+    tags: String,
+    preferences: String,
+    experience:String,
+    education:String,
+    skillsEndorsements:String,
+    recommendations:String,
+    accomplishments:String,
+    credentials: {
+      policeCheck:String,
+      referenceCheck:String,
+      photoVerification:String,
+      wwcCheck:String,
+      resumeCheck:String,
+      educationCheck:String,
+      status:{
+        policeCheck:Boolean,
+        referenceCheck:Boolean,
+        photoVerification:Boolean,
+        wwcCheck:Boolean,
+        resumeCheck:Boolean,
+        educationCheck:Boolean
+      }
+    }
   }
 }, { timestamps: true });
 

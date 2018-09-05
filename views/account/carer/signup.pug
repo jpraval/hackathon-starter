@@ -1,0 +1,70 @@
+extends ../../layout
+
+block content
+  .pb-2.mt-2.mb-4.border-bottom
+    h3 Carer  -  Sign up
+  form(id='signup-form', method='POST')
+    input(type='hidden', name='_csrf', value=_csrf)
+    .form-group.row
+      label.col-md-3.col-form-label.font-weight-bold.text-right(for='email') Email
+      .col-md-7
+        input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus, required)
+    .form-group.row
+      label.col-md-3.col-form-label.font-weight-bold.text-right(for='password') Password
+      .col-md-7
+        input.form-control(type='password', name='password', id='password', placeholder='Password', required)
+    .form-group.row
+      label.col-md-3.col-form-label.font-weight-bold.text-right(for='confirmPassword') Confirm Password
+      .col-md-7
+        input.form-control(type='password', name='confirmPassword', id='confirmPassword', placeholder='Confirm Password', required)
+    .form-group.row
+      label.col-md-3.col-form-label.font-weight-bold.text-right(for='suburb') Suburb
+      .col-md-7
+        input.form-control(type='suburb', name='suburb', id='suburb', placeholder='Suburb/Pincode', required)
+    .form-group.row
+      label.col-md-3.col-form-label.font-weight-bold.text-right(for='numhoursavailable') #Hours/Week
+      .col-md-7
+        input.form-control(type='numhoursavailable', name='numhoursavailable', id='numhoursavailable', placeholder='#Hours', required)
+    .form-group.row
+      label.col-md-3.col-form-label.font-weight-bold.text-right(for='careagesavailablefor') Caree Age Group available to:
+      .col-md-7
+        .form-group
+          select.selectpicker#careagesavailablefor.form-control(name='careagesavailablefor[]', multiple="multiple")
+            option 0-12 months
+            option 1-2 years
+            option 2-3 years
+            option 3-4 years
+            option 5+ years
+    .form-group.row
+      label.col-md-3.col-form-label.font-weight-bold.text-right(for='contactname') Contact Name
+      .col-md-7
+        input.form-control(type='contactname', name='contactname', id='contactname', placeholder='Your Name', required)   
+    .form-group.row
+      label.col-md-3.col-form-label.font-weight-bold.text-right(for='contactname') Mobile/Phone#
+      .col-md-7
+        input.form-control(type='mobile', name='mobile', id='mobile', placeholder='Mobile#', required)      
+    .form-group.row
+      label.col-md-3.col-form-label.font-weight-bold.text-right(for='contactname') Address 
+      .col-md-7
+        input.form-control(type='address', name='address', id='address', placeholder='Apt#, Street, Area, City', required)   
+    .form-group.row
+      label.col-md-3.col-form-label.font-weight-bold.text-right(for='pincode') PIN 
+      .col-md-7
+        input.form-control(type='pincode', name='pincode', id='pincode', placeholder='PIN#', required)   
+    hr  
+    .form-group.row
+      label.col-md-3.col-form-label.font-weight-bold.text-right(for='terms') Terms and Conditions 
+      .col-md-7
+        .checkbox
+          label
+            input(name='agree', value='agree', type='checkbox')
+            |  Agree with the 
+            a(href='termsandconditions') Terms and conditions
+
+        
+    .form-group.row
+      label.col-md-3.col-form-label.font-weight-bold.text-right(for='terms') ->
+      .col-md-7
+        button.btn.btn-success(type='submit')
+          i.fas.fa-user-plus.fa-sm
+          | Signup

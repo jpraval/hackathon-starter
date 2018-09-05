@@ -34,6 +34,10 @@ const homeController = require('./controllers/home');
 const userController = require('./controllers/user');
 const apiController = require('./controllers/api');
 const contactController = require('./controllers/contact');
+const roleSignupController = require('./controllers/rolesignup');
+const carerController = require('./controllers/carer');
+const familyController = require('./controllers/family');
+const providerController = require('./controllers/provider');
 
 /**
  * API keys and Passport configuration.
@@ -117,6 +121,7 @@ app.use('/', express.static(path.join(__dirname, 'public'), { maxAge: 3155760000
 app.use('/js/lib', express.static(path.join(__dirname, 'node_modules/popper.js/dist/umd'), { maxAge: 31557600000 }));
 app.use('/js/lib', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js'), { maxAge: 31557600000 }));
 app.use('/js/lib', express.static(path.join(__dirname, 'node_modules/jquery/dist'), { maxAge: 31557600000 }));
+app.use('/js/lib', express.static(path.join(__dirname, 'node_modules/bootstrap-select/dist/js'), { maxAge: 31557600000 }));
 app.use('/webfonts', express.static(path.join(__dirname, 'node_modules/@fortawesome/fontawesome-free/webfonts'), { maxAge: 31557600000 }));
 
 /**
@@ -130,6 +135,13 @@ app.get('/forgot', userController.getForgot);
 app.post('/forgot', userController.postForgot);
 app.get('/reset/:token', userController.getReset);
 app.post('/reset/:token', userController.postReset);
+app.get('/rolesignup',roleSignupController.index);
+app.get('/signup/carer',roleSignupController.getCarerSignup);
+app.post('/signup/carer',roleSignupController.postCarerSignup);
+app.get('/signup/family',roleSignupController.getFamilySignup);
+app.post('/signup/family',roleSignupController.postFamilySignup);
+app.get('/signup/provider',roleSignupController.getProviderSignup);
+app.post('/signup/provider',roleSignupController.postProviderSignup);
 app.get('/signup', userController.getSignup);
 app.post('/signup', userController.postSignup);
 app.get('/contact', contactController.getContact);
