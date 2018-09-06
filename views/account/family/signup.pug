@@ -26,15 +26,25 @@ block content
       .col-md-7
         input.form-control(type='numhoursneeded', name='numhoursneeded', id='numhoursneeded', placeholder='#Hours', required)
     .form-group.row
-      label.col-md-3.col-form-label.font-weight-bold.text-right(for='careagesrequired') Caree Age Group
+      label.col-md-3.col-form-label.font-weight-bold.text-right(for='careagesrequired[]') Caree Age Group
       .col-md-7
         .form-group
-          select.selectpicker#careagesrequired.form-control(name='careagesrequired[]',multiple="multiple")
-            option 0-12 months
-            option 1-2 years
-            option 2-3 years
-            option 3-4 years
-            option 5+ years
+          input(name='careagesrequired[]', value='0-12 months', type='checkbox')
+          | 0-12 months
+          br
+          input(name='careagesrequired[]', value='1-2 years', type='checkbox')
+          | 1-2 years
+          br
+          input(name='careagesrequired[]', value='2-3 years', type='checkbox')
+          | 2-3 years
+          br
+          input(name='careagesrequired[]', value='3-4 years', type='checkbox')
+          | 3-4 years
+          br
+          input(name='careagesrequired[]', value='5+ years', type='checkbox')
+          | 5+ years
+          br
+
     .form-group.row
       label.col-md-3.col-form-label.font-weight-bold.text-right(for='contactname') Contact Name
       .col-md-7

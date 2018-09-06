@@ -11,14 +11,14 @@ const userSchema = new mongoose.Schema({
 
   numhoursavailable: {type: Number},
   numhoursrequired: {type: Number},
-  careagesavailablefor: {type: String},
-  careagesrequired: {type: String},
+  careagesavailablefor: {type: Array},
+  careagesrequired: {type: Array},
   contactname: {type: String},
   mobile: {type: String},
   address: {type: String},
   pincode: {type: String},
-  typeofprovider: {type: String},
-
+  typeofprovider: {type: Array},
+  typeofservices: {type: Array},
   facebook: String,
   twitter: String,
   google: String,

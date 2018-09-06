@@ -95,15 +95,25 @@ block primary
           .br 
           
           .form-group.row
-            label.col-md-3.col-form-label.font-weight-bold.text-right(for='careagesrequired') Caree Age Group
-            .col-lg-7
+            label.col-md-3.col-form-label.font-weight-bold.text-right(for='careagesrequired[]') Caree Age Group
+            .col-md-7
               .form-group
-                select.selectpicker#careagesrequired.form-control(name='careagesrequired[]',multiple="multiple", style="height:auto;")
-                  option 0-12 months 
-                  option 1-2 years 
-                  option 2-3 years 
-                  option 3-4 years 
-                  option 5+ years 
+                input(name='careagesrequired[]', value='0-12 months', type='checkbox')
+                | 0-12 months
+                br
+                input(name='careagesrequired[]', value='1-2 years', type='checkbox')
+                | 1-2 years
+                br
+                input(name='careagesrequired[]', value='2-3 years', type='checkbox')
+                | 2-3 years
+                br
+                input(name='careagesrequired[]', value='3-4 years', type='checkbox')
+                | 3-4 years
+                br
+                input(name='careagesrequired[]', value='5+ years', type='checkbox')
+                | 5+ years
+                br
+
           .form-group.row
             label.col-md-3.col-form-label.font-weight-bold.text-right(for='numkids1') Number of kids
             .col-lg-7
@@ -157,18 +167,20 @@ block primary
       .panel-heading
          br
          h3 Verification
-      .panel-body.justify
+      .panel-body
         p Improve your profile in seconds 
         br 
         p We recommend verifying your account because it helps improve your reputation with FamilyBee, ensures you are visible tin search results providing you many more congruent job opportunities.
 
-        .btn-group
-          button.btn.btn-primary(type='button') PHOTO CHECK
-          button.btn.btn-primary(type='button') RESUME CHECK
-          button.btn.btn-primary(type='button') REFERENCE CHECK
-          button.btn.btn-primary(type='button') POLICE CHECK
-          button.btn.btn-primary(type='button') WWC CHECK
-          button.btn.btn-primary(type='button') EDUCATION CHECK
+        .container(align="center")
+          .btn-group
+            button.btn.btn-primary(type='button') PHOTO CHECK
+            button.btn.btn-primary(type='button') RESUME CHECK
+            button.btn.btn-primary(type='button') REFERENCE CHECK
+            button.btn.btn-primary(type='button') POLICE CHECK
+            button.btn.btn-primary(type='button') WWC CHECK
+            button.btn.btn-primary(type='button') EDUCATION CHECK
+          br 
 
 
 
